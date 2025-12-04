@@ -19,11 +19,11 @@ X = np.array(fdData['X'])
 Y = np.array(fdData['Y'])
 Z = np.array(fdData['Z'])
 #
-r_dot_E = np.array(fdData['r_dot_E'], dtype=np.complex)
-L_dot_E = 1j*np.array(fdData['L_dot_E_im'], dtype=np.complex)
+r_dot_E = np.array(fdData['r_dot_E'], dtype=np.complex128)
+L_dot_E = 1j*np.array(fdData['L_dot_E_im'], dtype=np.complex128)
 #
-r_dot_B = np.array(fdData['r_dot_B'], dtype=np.complex)
-L_dot_B = 1j*np.array(fdData['L_dot_B_im'], dtype=np.complex)
+r_dot_B = np.array(fdData['r_dot_B'], dtype=np.complex128)
+L_dot_B = 1j*np.array(fdData['L_dot_B_im'], dtype=np.complex128)
 
 ##### do the decomposition
 fdToroHarmVecRep = ToroHarmVecRep(X, Y, Z,

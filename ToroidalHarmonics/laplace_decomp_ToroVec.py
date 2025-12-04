@@ -29,8 +29,8 @@ phiTens = np.arctan2(yTens, xTens)
 l_num = 5# ang mom magnitude
 m_num = 3 # ang mom projection number
 #
-L_dot_F_tens = l_num*(l_num + 1)*(rTens**(-(l_num+1)))*sps.sph_harm(m_num, l_num, thetaTens, phiTens)
-#L_dot_F_tens = l_num*(l_num + 1)*(rTens**l_num)*sps.sph_harm(m_num, l_num, thetaTens, phiTens)
+L_dot_F_tens = l_num*(l_num + 1)*(rTens**(-(l_num+1)))*sps.sph_harm_y(m_num, l_num, thetaTens, phiTens)
+#L_dot_F_tens = l_num*(l_num + 1)*(rTens**l_num)*sps.sph_harm_y(m_num, l_num, thetaTens, phiTens)
 
 # sort by radius
 i_rad_desc = np.argsort(rTens.flatten())

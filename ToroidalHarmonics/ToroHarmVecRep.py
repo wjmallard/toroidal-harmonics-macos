@@ -86,7 +86,7 @@ class ToroHarmVecRep:
 
         # extend cubes to full tensors
         # basic
-        pqTens = np.zeros( (2, self.nCount, self.mCount, len(self.etaVec)), dtype=np.complex)
+        pqTens = np.zeros( (2, self.nCount, self.mCount, len(self.etaVec)), dtype=np.complex128)
         pqTens[0, :, :, :] = pCube[0:self.nCount, :, :]#  loose tail
         pqTens[1, :, :, :] = qCube[0:self.nCount, :, :]  # loose tail
 
@@ -95,7 +95,7 @@ class ToroHarmVecRep:
                        np.exp(1j*(self.nTens*self.thetaTens)) * np.exp(1j*(self.mTens*self.phiTens))
 
         # shifted n -> n+1
-        pq_n_plus_1_Tens = np.zeros( (2, self.nCount, self.mCount, len(self.etaVec)), dtype=np.complex)
+        pq_n_plus_1_Tens = np.zeros( (2, self.nCount, self.mCount, len(self.etaVec)), dtype=np.complex128)
         pq_n_plus_1_Tens[0, :, :, :] = pCube[1:(self.nCount+1), :, :]#  loose tail
         pq_n_plus_1_Tens[1, :, :, :] = qCube[1:(self.nCount+1), :, :]  # loose tail
 
@@ -104,7 +104,7 @@ class ToroHarmVecRep:
                        np.exp(1j * ( (self.nTens+1) * self.thetaTens)) * np.exp(1j * (self.mTens * self.phiTens))
 
         # shifted n -> n+2
-        pq_n_plus_2_Tens = np.zeros((2, self.nCount, self.mCount, len(self.etaVec)), dtype=np.complex)
+        pq_n_plus_2_Tens = np.zeros((2, self.nCount, self.mCount, len(self.etaVec)), dtype=np.complex128)
         pq_n_plus_2_Tens[0, :, :, :] = pCube[2:(self.nCount + 2), :, :]  # loose tail
         pq_n_plus_2_Tens[1, :, :, :] = qCube[2:(self.nCount + 2), :, :]  # loose tail
 

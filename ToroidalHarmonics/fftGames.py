@@ -38,7 +38,7 @@ fftRange=npfft.fftshift(fftRange)
 fqRange=npfft.fftshift(fqRange)
 
 # expected trace
-tgtFFTRange=np.zeros(fftRange.shape, dtype=np.complex)
+tgtFFTRange=np.zeros(fftRange.shape, dtype=np.complex128)
 tgtFFTRange[np.abs(fqRange-choiceFq).argmin()]=stepCount*np.exp(-1j*np.pi*timeLim*choiceFq)
 
 pl.figure(2)

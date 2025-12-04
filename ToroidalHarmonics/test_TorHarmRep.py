@@ -13,9 +13,9 @@ class TestTorHarmRep(unittest.TestCase):
         # prepare testing variables
         self.thetaCounts = 14
         self.phiCounts = 25
-        self.etaRange = np.array((1.5, 2.0, 2.5), dtype=np.float)
+        self.etaRange = np.array((1.5, 2.0, 2.5), dtype=np.float64)
         #from
-        self.torCoordRep=np.zeros( (self.thetaCounts, self.phiCounts, len(self.etaRange) ), dtype=np.complex)
+        self.torCoordRep=np.zeros( (self.thetaCounts, self.phiCounts, len(self.etaRange) ), dtype=np.complex128)
 
         # numerical precision for tests
         self.tiny = 1.0e-5
@@ -61,8 +61,8 @@ class TestTorHarmRep(unittest.TestCase):
         #generate inputs
         with DTORH() as dtorh: (plVec, qlVec) = dtorh.FixedM(np.cosh(self.etaRange), m, n)
 
-        aP = np.array(10.8, dtype=np.complex)
-        aQ = np.array(4.8, dtype=np.complex)
+        aP = np.array(10.8, dtype=np.complex128)
+        aQ = np.array(4.8, dtype=np.complex128)
 
         # prep NM
         thetaRange = np.arange(self.thetaCounts) * (2.0 * np.pi / self.thetaCounts) - np.pi

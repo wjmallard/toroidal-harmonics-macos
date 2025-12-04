@@ -35,7 +35,7 @@ theta_counts = 12
 theta_range = np.array(range(theta_counts))*(2*np.pi/theta_counts)-np.pi
 phi_counts = 12
 phi_range = np.array(range(phi_counts))*(2*np.pi/phi_counts)
-eta_range = np.linspace(0.1, 3.0, 5, dtype=np.float)
+eta_range = np.linspace(0.1, 3.0, 5, dtype=np.float64)
 #
 THETA, PHI, ETA = np.meshgrid(theta_range, phi_range, eta_range, indexing='ij')
 X, Y, Z = tor_coord_to_cart(ETA, THETA, PHI)

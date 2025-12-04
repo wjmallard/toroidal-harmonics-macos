@@ -15,7 +15,7 @@ timePeriods=1.0/np.abs(choiceFqs)
 timeLims=timePeriods*periodCount
 timeRange1=np.linspace(-timeLims[0]/2.0, timeLims[0]/2.0, periodCount*10)
 timeRange2=np.linspace(-timeLims[1]/2.0, timeLims[1]/2.0, periodCount*10)
-stepCounts=np.zeros(2, dtype=np.int)
+stepCounts=np.zeros(2, dtype=np.int64)
 stepCounts[0]=len(timeRange1)
 stepCounts[1]=len(timeRange2)
 

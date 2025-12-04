@@ -56,7 +56,7 @@ class TorHarmRep:
 
         ########## get the P,Q coeffs using dft
         # the problem with that is that one ends-up with indices in the wrong order
-        nmFunc = np.zeros(condFunc.shape, dtype=np.complex)
+        nmFunc = np.zeros(condFunc.shape, dtype=np.complex128)
 
         # create the range of indices in the same order as they would come out of DFT
         nRange = np.arange(thetaCounts)

@@ -314,15 +314,15 @@ class test_ToroHarmVecRep(unittest.TestCase):
 
             # extract scrambled field, it is always just one rPsi term with amplitude 1
             # div.F
-            div_r_psi_first = np.array(validData['div_r_psi_first_re'], dtype=np.complex) + \
-                              1j*np.array(validData['div_r_psi_first_im'], dtype=np.complex)
-            div_r_psi_second = np.array(validData['div_r_psi_second_re'], dtype=np.complex) + \
-                             1j * np.array(validData['div_r_psi_second_im'], dtype=np.complex)
+            div_r_psi_first = np.array(validData['div_r_psi_first_re'], dtype=np.complex128) + \
+                              1j*np.array(validData['div_r_psi_first_im'], dtype=np.complex128)
+            div_r_psi_second = np.array(validData['div_r_psi_second_re'], dtype=np.complex128) + \
+                             1j * np.array(validData['div_r_psi_second_im'], dtype=np.complex128)
             # r.F (assuming a_val=1)
-            r2_psi_first = np.array(validData['r2_psi_first_re'], dtype=np.complex) + \
-                              1j * np.array(validData['r2_psi_first_im'], dtype=np.complex)
-            r2_psi_second = np.array(validData['r2_psi_second_re'], dtype=np.complex) + \
-                              1j * np.array(validData['r2_psi_second_im'], dtype=np.complex)
+            r2_psi_first = np.array(validData['r2_psi_first_re'], dtype=np.complex128) + \
+                              1j * np.array(validData['r2_psi_first_im'], dtype=np.complex128)
+            r2_psi_second = np.array(validData['r2_psi_second_re'], dtype=np.complex128) + \
+                              1j * np.array(validData['r2_psi_second_im'], dtype=np.complex128)
 
             # different orders of magntidue, don't mix them
 
@@ -397,10 +397,10 @@ class test_ToroHarmVecRep(unittest.TestCase):
 
             # extract scrambled field, it is always just one rPsi term with amplitude 1
             # div.F
-            l2_psi_first = np.array(validData['l2_psi_first_re'], dtype=np.complex) + \
-                              1j * np.array(validData['l2_psi_first_im'], dtype=np.complex)
-            l2_psi_second = np.array(validData['l2_psi_second_re'], dtype=np.complex) + \
-                               1j * np.array(validData['l2_psi_second_im'], dtype=np.complex)
+            l2_psi_first = np.array(validData['l2_psi_first_re'], dtype=np.complex128) + \
+                              1j * np.array(validData['l2_psi_first_im'], dtype=np.complex128)
+            l2_psi_second = np.array(validData['l2_psi_second_re'], dtype=np.complex128) + \
+                               1j * np.array(validData['l2_psi_second_im'], dtype=np.complex128)
 
             # different orders of magntidue, don't mix them
 
@@ -484,10 +484,10 @@ class test_ToroHarmVecRep(unittest.TestCase):
 
             # extract scrambled field, it is always just one rPsi term with amplitude 1
             #
-            rCurlL_psi_first = np.array(validData['rCurlL_psi_first_re'], dtype=np.complex) + \
-                           1j * np.array(validData['rCurlL_psi_first_im'], dtype=np.complex)
-            rCurlL_psi_second = np.array(validData['rCurlL_psi_second_re'], dtype=np.complex) + \
-                            1j * np.array(validData['rCurlL_psi_second_im'], dtype=np.complex)
+            rCurlL_psi_first = np.array(validData['rCurlL_psi_first_re'], dtype=np.complex128) + \
+                           1j * np.array(validData['rCurlL_psi_first_im'], dtype=np.complex128)
+            rCurlL_psi_second = np.array(validData['rCurlL_psi_second_re'], dtype=np.complex128) + \
+                            1j * np.array(validData['rCurlL_psi_second_im'], dtype=np.complex128)
 
             # different orders of magntidue, don't mix them
 
