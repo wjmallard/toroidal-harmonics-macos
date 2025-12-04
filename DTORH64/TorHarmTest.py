@@ -2,11 +2,11 @@ import ctypes as ct
 import numpy as np
 
 # load dll
-dllTorHarm=ct.CDLL('wrapDTORH.dll')
+dllTorHarm=ct.CDLL('wrapDTORH64.dylib')
 
 # prep data
-nMax=np.array(300, dtype=np.int)
-mVal=np.array(2, dtype=np.int)
+nMax=300
+mVal=2
 c_newN=(ct.c_int)(0)# need a propper array here to pass as pointer
 zVal=np.array(1.00001, dtype=np.double)
 # arrays
@@ -18,14 +18,19 @@ zVal=np.array(1.00001, dtype=np.double)
 qlVec=np.zeros(nMax*2+10, dtype=np.double)
 plVec=np.zeros(nMax*2+10, dtype=np.double)
 
+c_err = (ct.c_int)(0)
+mode = 0
+
 dllTorHarm.wrapDTORH1(  (ct.c_double)(zVal),
                             (ct.c_int)(mVal),
                             (ct.c_int)(nMax),
                             plVec.ctypes.data_as(ct.POINTER(ct.c_double)),
                             qlVec.ctypes.data_as(ct.POINTER(ct.c_double)),
-                            ct.pointer(c_newN))
+                            ct.pointer(c_newN),
+                            ct.pointer(c_err),
+                            (ct.c_int)(mode))
 
-newN=np.array(c_newN, dtype=np.int)
+newN=c_newN.value
 
 print('z=%.5f' % zVal)
 print('PL[0]=%.5e,\tQL[0]=%.5e' % (plVec[0], qlVec[0]))

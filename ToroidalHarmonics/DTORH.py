@@ -15,7 +15,7 @@ class DTORH:
     # keep it simple for now, the DLL must be in the same folder
     #gets called by __enter__ amongst other things
     def __init__(self):
-        self.dllTorHarm = ct.CDLL('wrapDTORH64.dll')
+        self.dllTorHarm = ct.CDLL('wrapDTORH64.dylib')
 
     def __enter__(self):# with statement
         return self
@@ -23,7 +23,6 @@ class DTORH:
     def __exit__(self, exc_type, exc_value, traceback):# with statement
         dllHandle=self.dllTorHarm._handle
         del self.dllTorHarm#release object
-        ct.windll.kernel32.FreeLibrary(dllHandle)#release lib
 
     # handle the errors raised by the DTORH functions
     def __HandleErrorCode(self, errCode):
@@ -39,7 +38,7 @@ class DTORH:
         elif errCode == 11: raise DTORH.Internal('Continued fraction convergence failed!')
         else:               raise DTORH.Internal('Uknown error')
 
-    # mode 0 means evalute as equired
+    # mode 0 means evaluate as required
     # mode 1 normalize results by gamma(m+1/2)
     # mode 2, similar to mode 1, but without restriction on large z
     def FixedM(self, zVec, mVal, nVal, mode=0):

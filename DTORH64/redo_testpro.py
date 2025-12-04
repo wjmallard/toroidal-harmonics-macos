@@ -7,7 +7,7 @@ import ctypes as ct
 import numpy as np
 
 ############ load dll
-dllTorHarm = ct.CDLL('wrapDTORH.dll')
+dllTorHarm = ct.CDLL('wrapDTORH64.dylib')
 
 ############ prep data
 nDim = 301 # fortran will access inidces 0...nMax, so nMax+1 elements
@@ -77,7 +77,7 @@ mMax = mDim-1
 nMax = nDim-1
 
 c_newM = ct.c_int(0)
-newNM = np.zeros(mDim+1, dtype=np.int)
+newNM = np.zeros(mDim+1, dtype=np.int32)
 
 ql1DVec = np.zeros((nDim+1)*(mDim+1), dtype=np.double)
 pl1DVec = np.zeros((nDim+1)*(mDim+1), dtype=np.double)

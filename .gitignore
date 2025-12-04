@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+*.o
+*.dylib
+test
+testpro
+
+# Python
+__pycache__/
+*.pyc
+
